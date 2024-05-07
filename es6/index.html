@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>es6 Conditions checking with if statement</h1>
+
+    <form onsubmit="gradeCheck(event)">
+        Enter Your grade:
+        <input id="gradeInput" type="number" required step="0.01">
+        <br>
+        <button>Grade Check</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script> 
+        function gradeCheck(event) {
+
+            event.preventDefault();
+            let gradeInput = document.querySelector("#gradeInput").value;
+            gradeInput = Number(gradeInput);
+
+            console.log(gradeInput);
+
+            let message = "";
+
+            if (gradeInput <= 40) {
+          message = "Fail";
+
+      } else if (gradeInput <= 50) {
+        message = "C";
+        
+     } else  if (gradeInput <= 60) {
+         message = "B";
+
+     } else if (gradeInput <= 70) {
+         message = "A";}
+
+      else if (gradeInput <= 80) {
+         message = "A+";
+}
+else if (gradeInput <= 90) {  
+         message = "A++";
+}
+else if (gradeInput <= 99) {  
+         message = "A+++";
+}
+            document.querySelector("#resultWindow").innerHTML = message
+        }
+    </script>
+</body>
+</html>
